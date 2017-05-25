@@ -1,0 +1,603 @@
+﻿@{
+       ViewBag.Title = "Restaurante";
+}@model List<BDinner.Controllers.Restaurante_Controller>
+@{int i = 0, b = 0;
+}
+
+
+<div class="container">
+
+    <!--Header Restaurant-->
+@foreach (BDinner.Controllers.Restaurante_Controller p in Model as List<BDinner.Controllers.Restaurante_Controller>)
+{
+    <div class="row header-restaurante">
+        <div class="col-xs-12 col-sm-7">
+            <img class="logoRestaurante" src="/assets/img/logo-restaurante.png" alt="Logo de Restaurante" />
+        </div>
+        <div class="col-xs-12 col-sm-5 info-reserva">
+            <p class="h2">Reservaciones</p>
+            <p>Tel: <a href="tel:+52534232376" class="enlace" id="tel-res">+52 534 23 2376</a></p>
+            <p><a href="mailto:reservaciones@manglerojo.com" class="enlace" id="email-res">reservaciones@manglerojo.com</a></p>
+            <p><a href="http://www.manglerojo.com" class="enlace" id="web-res" target="_blank">www.manglerojo.com</a></p>
+        </div>
+    </div>
+    <!--/Header Restaurant-->
+
+    <!--Descripcion-->
+
+    <div class="row descripcion-res">
+        <div class="col-xs-12 col-sm-6 cont-img-frontal hidden-xs">
+
+            <div class="content-overImg">
+                <img class="img-frontal" src="" alt="Imagen al frente de restaurante" />
+                <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                    <i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <article class="col-xs-12 col-sm-6">
+            <h1 id="nombre-res">Mangle Rojo Restaurante</h1>
+            <p class="h2">
+                <span id="tipo-res">Comida Italiana</span>
+                <span id="calificacion-res">
+                    <img src="/assets/img/star-a-1.png" alt="punto" />
+                    <img src="/assets/img/star-a-1.png" alt="punto" />
+                    <img src="/assets/img/star-a-1.png" alt="punto" />
+                    <img src="/assets/img/star-a-2.png" alt="punto" />
+                    <img src="/assets/img/star-a-3.png" alt="punto" />
+                </span>
+            </p>
+            <p id="descripcion-res">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+            <p><strong><span id="direccion-res">Ave 1ra #2 entre calle 11 y 12, Guanabacoa, La Habana, Cuba.</span></strong></p>
+            <p>Horario:<br /><strong><span id="horario-res">10:00 am - 12:00 pm</span></strong></p>
+            <p class="color-p"><strong><span id="status-open-res">Abierto Ahora</span></strong></p>
+            <div class="social-net-res">
+                <!-- Instagram -->
+                <a class="btn-social" href="https://instagram.com" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <!-- Facebook -->
+                <a class="btn-social" href="http://www.facebook.com" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <!-- Whatsapp -->
+                <a class="btn-social" href="#" target="_blank">
+                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                </a>
+                <!-- Google+ -->
+                <a class="btn-social" href="https://plus.google.com" target="_blank">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+                <!-- Twitter -->
+                <a class="btn-social" href="https://twitter.com" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <!-- Tripadvisor -->
+                <a class="btn-social" href="https://tripadvisor.com" target="_blank">
+                    <i class="fa fa-tripadvisor" aria-hidden="true"></i>
+                </a>
+            </div>
+        </article>
+        <!--Galeria-->
+        <div class="col-xs-12 visible-xs">
+            <h2>Galería</h2>
+        </div>
+        <div class="col-xs-12">
+            <!--casusel-->
+            <div class="carousel carousel-dinamicVM slide" id="multiCarusel" data-interval="false">
+                <span class="control-VM"><a class="left carousel-control" href="#multiCarusel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a></span>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-1.jpg" class="img-responsive" alt="imagen numero 1" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-2.jpg" class="img-responsive" alt="imagen numero 2" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-3.jpg" class="img-responsive" alt="imagen numero 3" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-4.jpg" class="img-responsive" alt="imagen numero 4" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-5.jpg" class="img-responsive" alt="imagen numero 5" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-6.jpg" class="img-responsive" alt="imagen numero 6" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-7.jpg" class="img-responsive" alt="imagen numero 7" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-xs-3 col-sm-2">
+                            <img src="/assets/img/restaurante-8.jpg" class="img-responsive" alt="imagen numero 8" />
+                            <div class="movil-zoom visible-xs"></div>
+                        </div>
+                    </div>
+                </div>
+                <span class="control-VM"><a class="right carousel-control" href="#multiCarusel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a></span>
+            </div>
+            <!--/casusel-->
+        </div>
+        <!--/Galeria-->
+    </div>
+}
+    <!--/Descripcion-->
+
+    <!--Servicios-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Servicios</h2>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/discapacidad.png" alt="Discapacidad" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de discapacidad.
+                    </div>
+                </span>
+                <span class="name-service">Acceso discapacidad</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/servicio-domicilio.png" alt="Servicio a Domicilio" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de Servicio a domicilio.
+                    </div>
+                </span>
+                <span class="name-service">Servicio a Domicilio</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/area-juegos.png" alt="Area Juegos" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de área de juegos.
+                    </div>
+                </span>
+                <span class="name-service">Área de Juegos</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/chair-baby.png" alt="Silla para bebé" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de silla para bebe.
+                    </div>
+                </span>
+                <span class="name-service">Silla para bebé</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/AC.png" alt="A/C - Calefacción" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de A/C.
+                    </div>
+                </span>
+                <span class="name-service">A/C - Calefacción</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/pago.png" alt="Pago en efectivo" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de pago en efectivo.
+                    </div>
+                </span>
+                <span class="name-service">Pago en efectivo</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/tarjeta.png" alt="Pago Tarjetas de Crédito" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de pago tarjetas de crédito.
+                    </div>
+                </span>
+                <span class="name-service">Pago Tarjetas de Crédito</span>
+            </div>
+            <div class="service-block ">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/parrilla.png" alt="Parrilla" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de parrilla.
+                    </div>
+                </span>
+                <span class="name-service">Parrilla</span>
+            </div>
+            <div class="service-block">
+                <span class="img-service tooltip-service">
+                    <img src="/assets/img/music.png" alt="Música" />
+                    <div class="tooltip-service-content">
+                        <!-- Mensaje -->
+                        Descripción de música.
+                    </div>
+                </span>
+                <span class="name-service">Música</span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <img class="map-location" src="/assets/img/ubicacion.png" alt="Ubicación de Restaurante" />
+        </div>
+    </div>
+    <!--/Servicios-->
+
+    <!--Horarios-->
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Horarios</h2>
+        </div>
+        <div class="col-xs-12">
+            <div class="block-horarios">
+                <div class="element-horarios">
+                    Horarios
+                </div>
+                <div class="element-horarios">
+                    <div class="titulo">
+                        Desayunos
+                    </div>
+                    <div class="horario">
+                        10:00 am - 12:00 pm
+                    </div>
+                </div>
+                <div class="element-horarios">
+                    <div class="titulo">
+                        Almuerzo
+                    </div>
+                    <div class="horario">
+                        12:00 pm - 6:00 pm
+                    </div>
+                </div>
+                <div class="element-horarios">
+                    <div class="titulo">
+                        Cena
+                    </div>
+                    <div class="horario">
+                        6:00 pm - 9:00 pm
+                    </div>
+                </div>
+                <div class="element-horarios">
+                    <div class="titulo">
+                        Bar
+                    </div>
+                    <div class="horario">
+                        12:00 pm - 12:00 am
+                    </div>
+                </div>
+                <div class="element-horarios">
+                    <div class="titulo">
+                        Happy Hour
+                    </div>
+                    <div class="horario">
+                        4:00 pm - 6:00 pm
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Horarios-->
+
+    <!--Header Resultados-->
+    <div class="row header-result">
+        <div class="col-xs-12">
+            <h2>Platillos Más Populares</h2>
+        </div>
+    </div>
+    <!--/Header Resultados-->
+
+
+    <!--/Resultados-->
+    <section class="resultados">
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-1.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-2.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-3.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-4.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-5.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-1.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-2.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+        <div class="ele-res">
+            <img src="/assets/img/foods/italian-food-3.jpg" alt="nombre de platillo" />
+            <div class="block-data">
+                <div class="">
+                    <a href="#" class="name-platillo">Nombre Platillo</a>
+                    <span class="stars-restaurant"><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-1.png" alt="star" /><img src="/assets/img/star-2.png" alt="star" /><img src="/assets/img/star-3.png" alt="star" /></span>
+                </div>
+                <div class="">
+                    <span class="price-platillo">$0.00</span>
+                    <span class="views"><span class="views-platillo">267</span> <i class="fa fa-eye" aria-hidden="true"></i></span>
+                </div>
+            </div>
+        </div>
+        <!--/ele-res-->
+    </section>
+    <!--/Resultados-->
+    <!--/Header Resultados-->
+</div>
+
+
+<!--Modal ampliar imagen-->
+<div id="modalZoom" class="modal">
+    <!-- The Close Button -->
+    <span class="close" onclick="document.getElementById('modalZoom').style.display='none'">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="imagen-in-modal">
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
+<!--/Modal ampliar imagen-->
+
+<!--scripts java-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/4af7e176a2.js"></script>
+<script>
+    $(document).ready(function () {
+        //tooltip share
+        $(".tooltip-share").click(function () {
+            var opaTool = $(this).children(".tooltip-share-content");
+            if (opaTool.css("opacity") == 0) {
+                opaTool.css("visibility", "visible");
+                opaTool.css("opacity", "1");
+            } else {
+                opaTool.css("visibility", "hidden");
+                opaTool.css("opacity", "0");
+            }
+        });
+        $(document).on('click', function (e) {
+            var selectClick = $(e.target).parents();
+            var _into = true;
+            selectClick.each(function () {
+                if ($(this).hasClass("tooltip-share")) {
+                    _into = false;
+                    return false;
+                }
+            });
+            if (_into) {
+                $('.tooltip-share-content').css("visibility", "hidden");
+                $('.tooltip-share-content').css("opacity", "0");
+            }
+        });
+        ////////////////////
+        //ordenar resultados
+        function orderResult() {
+            //variables
+            var HElemento = false, MElemento = false, rowCount = 1, marginStatus = false, maxColumn = 5, twoColumn = false;
+            var mediaquery992 = window.matchMedia("(max-width:992px)"), mediaquery767 = window.matchMedia("(max-width:767px)"), sizeGal = "ele-res-4";
+            //comprobacion de ancho pantalla
+            if (mediaquery767.matches) {
+                sizeGal = "ele-res-1";
+                maxColumn = $(".ele-res").length + 1;
+            } else if (mediaquery992.matches) {
+                sizeGal = "ele-res-2";
+                maxColumn = 3;
+            } else {
+                sizeGal = "ele-res-4";
+                maxColumn = 5;
+            }
+            //alinear resultados
+            //limpiar clases
+            $(".ele-res").attr("class", "");
+            $(".resultados > div").addClass("ele-res");
+            $(".ele-res").each(function () {
+                //contador de renglones
+                if (rowCount == maxColumn) {
+                    marginStatus = true;
+                    rowCount = 1;
+                    switch (HElemento) {
+                        case false:
+                            HElemento = true;
+                            break;
+                        case true:
+                            HElemento = false;
+                            break;
+                    }
+                }
+                //asignacion de clases altura y ancho
+                $(this).addClass(sizeGal);
+                switch (HElemento) {
+                    case false:
+                        $(this).addClass("ele-res-lg");
+                        HElemento = true;
+                        break;
+                    case true:
+                        $(this).addClass("ele-res-sm");
+                        HElemento = false;
+                        break;
+                }
+                //asginacion de margen igualador
+                if (marginStatus) {
+                    if (maxColumn == 3) {
+                        if (rowCount == 1 && $(this).hasClass("ele-res-sm")) {
+                            twoColumn = true;
+                        }
+                        if (twoColumn && rowCount == 2) {
+                            twoColumn = false;
+                            $(this).addClass("menos-margin");
+                        }
+                    } else {
+                        switch (MElemento) {
+                            case false:
+                                MElemento = true;
+                                break;
+                            case true:
+                                MElemento = false;
+                                $(this).addClass("menos-margin");
+                                break;
+                        }
+                    }
+                }
+                rowCount++;
+            });
+        }
+        //orderResult
+        orderResult();
+        //llamado a funcion con rezise
+        $(window).resize(function () {
+            orderResult();
+        });
+        /*Multi Casusel*/
+        var numImg = 6;
+        $('.carousel-dinamicVM .item').each(function () {
+            var itemToClone = $(this);
+
+            for (var i = 1; i < numImg; i++) {
+                itemToClone = itemToClone.next();
+
+                // wrap around if at end of item collection
+                if (!itemToClone.length) {
+                    itemToClone = $(this).siblings(':first');
+                }
+
+                // grab item, clone, add marker class, add to collection
+                itemToClone.children(':first-child').clone()
+                .addClass("cloneditem-" + (i))
+                .appendTo($(this));
+            }
+        });
+        /*/Multicarusel*/
+        /*imagen frontal*/
+        $(".carousel-dinamicVM img").click(function () {
+            var URLimg = $(this).attr("src");
+            $(".img-frontal").attr("src", URLimg);
+            $("#image-modal").attr("src", URLimg);
+        });
+        /*/imagen frontal*/
+        /*Modal*/
+        //imagen frontal
+        $(".img-frontal").attr("src", $("#multiCarusel img:first-child").attr("src"));
+        $(".overlay-max").click(function () {
+            $('#modalZoom').show();
+            $('#imagen-in-modal').attr("src", $(".img-frontal").attr("src"))
+            $('#modalZoom #caption').html($(".img-frontal").attr("alt"));
+
+        });
+        //imagen carusel
+        $(".movil-zoom").click(function () {
+            $('#modalZoom').show();
+            $('#imagen-in-modal').attr("src", $(this).siblings("img").attr("src"))
+            $('#modalZoom #caption').html($(this).siblings("img").attr("alt"));
+
+        });
+        $("#modalZoom .close").click(function () {
+            $('#modalZoom').hide();
+        });
+        /*/Modal*/
+    });
+</script>

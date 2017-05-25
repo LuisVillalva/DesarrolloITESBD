@@ -1,0 +1,330 @@
+﻿@{
+    ViewBag.Title = "Vinos";
+}@model List<BDinner.Controllers.Vinos_Controller>
+@{int i = 0, b = 0;
+}
+<div class="container">
+
+    <!--Header Platillo-->
+@foreach (BDinner.Controllers.Vinos_Controller p in Model as List<BDinner.Controllers.Vinos_Controller>)
+{
+    <div class="row header-platillo">
+        <div class="col-xs-12">
+
+            <p class="h1">@p.VIN_NOMBRE</p>
+            <h2>Mangle Rojo</h2>
+            <div class="star-header calificacion-platillo">
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-2.png" alt="punto" />
+                <img src="/assets/img/star-a-3.png" alt="punto" />
+            </div>
+        </div>
+    </div>
+    <!--/Header Platillo-->
+
+    <!--Descripcion-->
+    <div class="row descripcion vinos">
+        <div class="col-xs-12 col-sm-6">
+            <div class="content-overImg content-img-fit-main">
+                <img class="img-fit" src="/assets/img/vinos/vino-1.jpg" alt="Imagen de vino 1" />
+                <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                    <i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="graficos-desc">
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/sabor.png" alt="Amargo Acido Dulce" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Amargo Acido Dulce
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/temp.png" alt="Temperatura" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Temperatura
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/sutil.png" alt="Sutileza" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Sutileza
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/heart.png" alt="Agrado" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Agrado
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-share">
+                        <img src="/assets/img/share.png" alt="Compartir" />
+                        <div class="tooltip-share-content" style="visibility: hidden; opacity: 0;">
+                            <!-- Facebook -->
+                            <a class="btn-social" href="http://www.facebook.com/sharer.php?u=--URL A COMPARTIR--" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                            <!-- Google+ -->
+                            <a class="btn-social" href="https://plus.google.com/share?url=--URL A COMPARTIR--" target="_blank">
+                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="btn-social" href="https://twitter.com/share?url=--URL A COMPARTIR--" target="_blank">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <a href="#location" title="Ver Ubicación"><img src="/assets/img/locat.png" alt="Ubicación" /></a>
+                </div>
+            </div>
+        </div>
+        <article class="col-xs-12 col-sm-6">
+            <h3 id="vino-origen">@p.VIN_ORIGEN_PRO</h3>
+            <p><strong>Variedad:</strong> <span id="vino-variedad">@p.VIN_VARIEDAD</span></p>
+            <p><strong>Origen de la Variedad:</strong> <span id="vino-origen-variedad">@p.VIN_ORIGRN_VAR</span></p>
+            <p><strong>Fermentación:</strong> <span id="vino-fermentacion">@p.VIN_FERMENTACION</span></p>
+            <p><strong>Temperatura de servicio:</strong> <span id="vino-temperatura">@p.VIN_TEMPERATURA</span></p>
+            <p><strong>Maridaje:</strong> <span id="vino-maridaje">@p.VIN_MARIDAJE</span></p>
+            <p><strong>Graduación Alcohólica:</strong> <span id="vino-graduacion">@p.VIN_GRADUACION</span></p>
+            <p><strong>Nota de Cata:</strong> <span id="vino-graduacion">@p.VIN_NOTAS</span></p>
+        </article>
+        <!--GALERIA DE IMAGENES-->
+        <div class="col-xs-12">
+            <div class="block-imgs">
+                <div class="content-overImg content-img-fit-tum">
+                    <img class="img-fit" src="/assets/img/vinos/vino-2.jpg" alt="Imagen de Vino 2" />
+                    <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="content-overImg content-img-fit-tum">
+                    <img class="img-fit" src="/assets/img/vinos/vino-3.jpg" alt="Imagen de Vino 3" />
+                    <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="content-overImg content-img-fit-tum">
+                    <img class="img-fit" src="/assets/img/vinos/vino-4.jpg" alt="Imagen de Vino 4" />
+                    <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                        <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/GALERIA DE IMAGENES-->
+    </div>
+}
+    <!--/Descripcion-->
+
+    <!--EVALUACIONES-->
+    <div class="row evaluaciones">
+        <div class="col-xs-12 col-md-6">
+            <h2>Evaluaciones y Calificaciones</h2>
+            <div class="calif">
+                <span class="h3">Calificación global</span>
+                <span class="calificacion-platillo">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-2.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                </span>
+            </div>
+            <!--COMENTARIOS-->
+            <div class="comentarios">
+                <!--COMENTARIO INDIVIDUAL-->
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#86bbdf;">V</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">ValeriaGonzalez</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy bueno</span> -
+                            <span class="comentario-date">20 de diciembre 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#fb9232;">T</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">tomasGutierrez</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy bueno...</span> -
+                            <span class="comentario-date">07 de noviembre 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#c7cb5f;">M</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">moylover88</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy muy rica</span> -
+                            <span class="comentario-date">29 de julio 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/COMENTARIO INDIVIDUAL-->
+            </div>
+            <!--COMENTARIOS-->
+        </div>
+        <!--UBICACION-->
+        <div class="col-xs-12 col-md-6">
+            <a name="location"></a><img class="map-location" src="/assets/img/ubicacion.png" alt="Ubicación de Restaurante">
+        </div>
+        <!--/UBICACION-->
+    </div>
+    <!--/EVALUACIONES-->
+
+    <!--BLOCK NUEVO COMENTARIO-->
+    <div class="row">
+        <div class="col-xs-12 new-comentario-block">
+            <h2>Evalúa esta Reseña</h2>
+            <div>
+                <span id="set-stars">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                </span>
+                <span>Dale una calificación con estrelllas.</span>
+                <!--FORM COMENTAR-->
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" placeholder="Cuentanos tu experiencia."></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <span class="send-img" title="Enviar Imagen"><img src="/assets/img/camara.png" alt="Enviar Imagen" /></span>
+                        <button type="submit" class="btn primario">Enviar</button>
+                    </div>
+                </form>
+                <!--/FORM COMENTAR-->
+            </div>
+        </div>
+    </div>
+    <!--/BLOCK NUEVO COMENTARIO-->
+</div>
+
+
+<!--Modal ampliar imagen-->
+<div id="modalZoom" class="modal">
+    <!-- The Close Button -->
+    <span class="close" onclick="document.getElementById('modalZoom').style.display='none'">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="imagen-in-modal">
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
+<!--/Modal ampliar imagen-->
+
+<!--scripts java-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/4af7e176a2.js"></script>
+<script>
+    $(document).ready(function () {
+        //tooltips
+        $(".tooltip-service").click(function () {
+            var opaTool = $(this).children(".tooltip-service-content");
+            if (opaTool.css("opacity") == 0) {
+                opaTool.css("visibility", "visible");
+                opaTool.css("opacity", "1");
+            } else {
+                opaTool.css("visibility", "hidden");
+                opaTool.css("opacity", "0");
+            }
+        });
+        $(".tooltip-share").click(function () {
+            var opaTool = $(this).children(".tooltip-share-content");
+            if (opaTool.css("opacity") == 0) {
+                opaTool.css("visibility", "visible");
+                opaTool.css("opacity", "1");
+            } else {
+                opaTool.css("visibility", "hidden");
+                opaTool.css("opacity", "0");
+            }
+        });
+        $(document).on('click', function (e) {
+            var selectClick = $(e.target).parents();
+            var _into = true;
+            selectClick.each(function () {
+                if ($(this).hasClass("tooltip-service")) {
+                    _into = false;
+                    return false;
+                }
+                if ($(this).hasClass("tooltip-share")) {
+                    _into = false;
+                    return false;
+                }
+            });
+            if (_into) {
+                $('.tooltip-service-content').css("visibility", "hidden");
+                $('.tooltip-service-content').css("opacity", "0");
+                $('.tooltip-share-content').css("visibility", "hidden");
+                $('.tooltip-share-content').css("opacity", "0");
+            }
+        });
+        ////////////////////
+        /*Modal*/
+        //imagen frontal
+        $(".overlay-max").click(function () {
+            $('#modalZoom').show();
+            $('#imagen-in-modal').attr("src", $(this).siblings("img").attr("src"));
+            $('#modalZoom #caption').html($(this).siblings("img").attr("alt"));
+
+        });
+        $("#modalZoom .close").click(function () {
+            $('#modalZoom').hide();
+        });
+        /*/Modal*/
+    });
+</script>

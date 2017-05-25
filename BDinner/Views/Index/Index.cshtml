@@ -1,0 +1,92 @@
+﻿
+@{
+    
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bdinner</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Descripción Bdinner" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" type="/image/x-icon" href="/assets/img/favicon.ico" />
+    <link rel="alternate" href="http://www.dominio.com" hreflang="es" />
+    <link rel="alternate" href="http://www.dominio.com/en" hreflang="en" />
+    <link rel="alternate" href="http://www.dominio.com/en" hreflang="x-default" />
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+</head>
+<body>
+    <header>
+
+    </header>
+    <!--seccion de busqueda principal-->
+    <section class="block-index">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logo text-center">
+                        <img src="/assets/img/logo.png" alt="Logo Bdinner" />
+                    </div>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <h3>
+                        Los Mejores Platillos. Compara Precios. Checa los ingredientes.<br />
+                        No te enchiles, eres alérgico!.
+                    </h3>
+                </div>
+                <div class="col-xs-12 text-center">
+                    <form action="peticion" class="form-inline" name="formulario">
+                        <div class="input-group">
+                            <input id="caja" type="text" class="form-control" placeholder="Que se te antoja?" list="availableTags" name="caja">
+                            <datalist id="availableTags">
+                                <option value="Vinos" />
+                                <option value="Tacos" />
+                                <option value="Pollo" />
+                                <option value="Carne" />
+                                <option value="Chile" />
+                                <option value="Rico" />
+                                <option value="Suave" />
+                                <option value="Pescado" />
+                                <option value="Frio" />
+                                <option value="Caliente" />
+                                <option value="Almejas" />
+                                <option value="Ostiones" />
+                                <option value="Lima" />
+                                <option value="Uva" />
+                                <option value="Espumoso" />
+                                <option value="Pizza" />
+                                <option value="Pasta" />
+                                <option value="Macarrones" />
+                                <option value="Lagsaña" />
+                                <option value="Naranja" />
+                                <option value="Piña" />
+                            </datalist>
+                            <span class="input-group-btn">
+                                <button class="btn primario" type="submit">Buscar</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--seccion de busqueda principal-->
+    <footer>
+        www.Bdinner.com
+    </footer>
+    <!--scripts java-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/Scripts/busqueda_index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

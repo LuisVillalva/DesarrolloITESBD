@@ -1,0 +1,366 @@
+﻿@{
+    ViewBag.Title = "Platillo";
+}@model List<BDinner.Controllers.Platillos_Controller>
+@{int i = 0, b = 0;
+}
+
+<div class="container">
+
+    <!--Buscador-->
+    <div class="row buscador">
+        <div class="col-xs-12">
+            <p>Cambiar Búsqueda</p>
+        </div>
+        <div class="col-xs-12">
+            <form class="form-inline" action="#">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="wordKeys" placeholder="Busca Restaurante por Nombre, Zona, Comida...">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="typeSearch">
+                        <option value="" selected disabled hidden>Tipo de Comida</option>
+                        <option value="Italiana">Italiana</option>
+                        <option value="Mexicana">Mexicana</option>
+                        <option value="Espanola">Española</option>
+                        <option value="Oriental">Oriental</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="zonaSearch">
+                        <option value="" selected disabled hidden>Zona</option>
+                        <option value="La Habana">La Habana</option>
+                        <option value="Santiago de Cuba">Santiago de Cuba</option>
+                        <option value="Trinidad">Trinidad</option>
+                        <option value="Santa Clara">Santa Clara</option>
+                        <option value="Cienfuegos">Cienfuegos</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="precioSearch">
+                        <option value="" selected disabled hidden>Precio</option>
+                        <option value="1">$1 - $10</option>
+                        <option value="2">$11 - $20</option>
+                        <option value="3">$21 - $50</option>
+                        <option value="4">$51 - $100</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="precioSearch">
+                        <option value="" selected disabled hidden>Moneda</option>
+                        <option value="EUR">Euros</option>
+                        <option value="MXN">Pesos Mexicanos</option>
+                        <option value="USD">Dolares USA</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn primario" id="btnBuscar">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <!--/Buscador-->
+
+    <!--Header Platillo-->
+@foreach (BDinner.Controllers.Platillos_Controller p in Model as List<BDinner.Controllers.Platillos_Controller>)
+{
+    <div class="row header-platillo">
+        <div class="col-xs-12">
+            <p class="h1">@p.PLA_NOMBRE</p>
+            <h2>Mangle Rojo</h2>
+            <div class="star-header calificacion-platillo">
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-1.png" alt="punto" />
+                <img src="/assets/img/star-a-2.png" alt="punto" />
+                <img src="/assets/img/star-a-3.png" alt="punto" />
+            </div>
+        </div>
+    </div>
+    <!--/Header Platillo-->
+
+    <!--Descripcion-->
+    <div class="row descripcion platillo">
+        <div class="col-xs-12 col-sm-6">
+            <div class="content-overImg content-img-fit-main">
+                <img class="img-fit" src="/assets/img/foods/italian-food-2.jpg" alt="Imagen de platillo" />
+                <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                    <i class="fa fa-arrows-alt fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="graficos-desc">
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/hot.png" alt="Picante" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Grado de picante
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/pepper.png" alt="Condimentos" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Condimentos
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/heart.png" alt="Corazón" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Agrado
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <div class="tooltip-service">
+                        <img src="/assets/img/share.png" alt="Compartir" />
+                        <div class="tooltip-service-content">
+                            <!-- Mensaje -->
+                            Compartir
+                        </div>
+                    </div>
+                </div>
+                <div class="element-g-desc">
+                    <a href="#location" title="Ver Ubicación"><img src="/assets/img/locat.png" alt="Ubicación" /></a>
+                </div>
+            </div>
+        </div>
+        <article class="col-xs-12 col-sm-6">
+                <p id="descripcion-platillo">@p.PLA_RESENA</p>
+                <p class="color-p h1 text-right">$<span id="price-platillo">@p.PLA_PRECIO</span></p>
+                <div class="block-imgs">
+                    <div class="content-overImg content-img-fit-tum">
+                        <img class="img-fit" src="/assets/img/foods/italian-food-2.jpg" alt="Imagen de platillo" />
+                        <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="content-overImg content-img-fit-tum">
+                        <img class="img-fit" src="/assets/img/foods/italian-food-2.jpg" alt="Imagen de platillo" />
+                        <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="content-overImg content-img-fit-tum">
+                        <img class="img-fit" src="/assets/img/foods/italian-food-2.jpg" alt="Imagen de platillo" />
+                        <div class="overlay-max" data-toggle="modal" data-target=".zoom-image">
+                            <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+</article>
+    </div>
+    <!--/Descripcion-->
+
+    <!--INGREDIENTES INFO-->
+    <div class="row ingredientes-info">
+        <div class="col-xs-12 col-md-7">
+            <h4>INGREDIENTES</h4>
+            <p id="ingredientes">
+                @p.PLA_INGREDIENTES
+            </p>
+        </div>
+        <div class="col-xs-12 col-md-5">
+            <h4>INFORMACIÓN NUTRICIONAL</h4>
+            <p id="nutricional">
+                1 porción = 1/6 de lasagna<br />
+                Cantidad por porción:<br />
+                Energía –	363 Kcal<br />
+                Carbohidratos –	29,08 g<br />
+                Proteínas –	20,83 g<br />
+                Grasas totales –	18,13 g<br />
+                Grasas saturadas –	7,16 g<br />
+                Grasas monoinsaturadas –	5,99 g<br />
+                Grasas poliinsaturadas –	3,97 g<br />
+                Colesterol –	130 mg<br />
+                Fibra –	1,00 g<br />
+                Sodio –	1235 mg<br />
+                Basado en una dieta de 2000 Kcal.
+            </p>
+        </div>
+    </div>
+}
+    <!--/INGREDIENTES INFO-->
+
+    <!--EVALUACIONES-->
+    <div class="row evaluaciones">
+        <div class="col-xs-12 col-md-6">
+            <h2>Evaluaciones y Calificaciones</h2>
+            <div class="calif">
+                <span class="h3">Calificación global</span>
+                <span class="calificacion-platillo">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-1.png" alt="punto">
+                    <img src="/assets/img/star-a-2.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                </span>
+            </div>
+            <!--COMENTARIOS-->
+            <div class="comentarios">
+                <!--COMENTARIO INDIVIDUAL-->
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#86bbdf;">V</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">ValeriaGonzalez</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy bueno</span> -
+                            <span class="comentario-date">20 de diciembre 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#fb9232;">T</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">tomasGutierrez</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy bueno...</span> -
+                            <span class="comentario-date">07 de noviembre 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row comentario">
+                    <div class="col-xs-2 col-sm-1 col-md-2">
+                        <div class="avatar" style="background-color:#c7cb5f;">M</div>
+                    </div>
+                    <div class="col-xs-10 col-sm-11 col-md-10">
+                        <div class="calificacion">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-1.png" alt="punto">
+                            <img src="/assets/img/star-a-2.png" alt="punto">
+                            <img src="/assets/img/star-a-3.png" alt="punto">
+                        </div>
+                        <div class="autor">
+                            por <span class="name-autor">moylover88</span>
+                        </div>
+                        <div class="comentario-content">
+                            <span class="comentario-text">Muy muy rica</span> -
+                            <span class="comentario-date">29 de julio 2016</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/COMENTARIO INDIVIDUAL-->
+            </div>
+            <!--COMENTARIOS-->
+        </div>
+        <!--UBICACION-->
+        <div class="col-xs-12 col-md-6">
+            <a name="location"></a><img class="map-location" src="/assets/img/ubicacion.png" alt="Ubicación de Restaurante">
+        </div>
+        <!--/UBICACION-->
+    </div>
+    <!--/EVALUACIONES-->
+
+    <!--BLOCK NUEVO COMENTARIO-->
+    <div class="row">
+        <div class="col-xs-12 new-comentario-block">
+            <h2>Evalúa este Platillo</h2>
+            <div>
+                <span id="set-stars">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                    <img src="/assets/img/star-a-3.png" alt="punto">
+                </span>
+                <span>Dale una calificación con estrelllas.</span>
+                <!--FORM COMENTAR-->
+                <form>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" placeholder="Cuentanos tu experiencia."></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <span class="send-img" title="Enviar Imagen"><img src="/assets/img/camara.png" alt="Enviar Imagen" /></span>
+                        <button type="submit" class="btn primario">Enviar</button>
+                    </div>
+                </form>
+                <!--/FORM COMENTAR-->
+            </div>
+        </div>
+    </div>
+    <!--/BLOCK NUEVO COMENTARIO-->
+</div>
+
+<!--Modal ampliar imagen-->
+<div id="modalZoom" class="modal">
+    <!-- The Close Button -->
+    <span class="close" onclick="document.getElementById('modalZoom').style.display='none'">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="imagen-in-modal">
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
+<!--/Modal ampliar imagen-->
+
+<!--scripts java-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/4af7e176a2.js"></script>
+<script>
+    $(document).ready(function () {
+        //tooltip share
+        $(".tooltip-service").click(function () {
+            var opaTool = $(this).children(".tooltip-service-content");
+            if (opaTool.css("opacity") == 0) {
+                opaTool.css("visibility", "visible");
+                opaTool.css("opacity", "1");
+            } else {
+                opaTool.css("visibility", "hidden");
+                opaTool.css("opacity", "0");
+            }
+        });
+        $(document).on('click', function (e) {
+            var selectClick = $(e.target).parents();
+            var _into = true;
+            selectClick.each(function () {
+                if ($(this).hasClass("tooltip-service")) {
+                    _into = false;
+                    return false;
+                }
+            });
+            if (_into) {
+                $('.tooltip-service-content').css("visibility", "hidden");
+                $('.tooltip-service-content').css("opacity", "0");
+            }
+        });
+        ////////////////////
+        /*Modal*/
+        //imagen frontal
+        $(".overlay-max").click(function () {
+            $('#modalZoom').show();
+            $('#imagen-in-modal').attr("src", $(this).siblings("img").attr("src"));
+            $('#modalZoom #caption').html($(this).siblings("img").attr("alt"));
+
+        });
+        $("#modalZoom .close").click(function () {
+            $('#modalZoom').hide();
+        });
+        /*/Modal*/
+    });
+</script>
+
